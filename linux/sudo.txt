@@ -1,0 +1,79 @@
+1. sudo
+sudo (SuperUser DO) Linux command allows you to run programs or other commands with administrative privileges, just like “Run as administrator” in Windows. This is useful when, for example, you need to modify files in a directory that your user wouldn’t normally have access to.
+
+2. apt-get
+apt-get is the one of the most important Ubuntu commands every beginner must know. It is used to install, update, upgrade and remove any package. apt-get basically works on a database of available packages. Here is the list of different apt-get commands:
+
+	sudo apt-get update
+apt-get update with super user privileges is the first command you need to run in any Linux system after a fresh install. This command updates the database and let your system know if there are newer packages available or not.
+
+	sudo apt-get upgrade
+After updating the package database, next step is to to upgrade the installed packages. For upgrading all the packages with available updates you can use this command.
+
+And if you like to upgrade a particular package, you should tweak the above command a little:
+
+		sudo apt-get upgrade <package-name>
+
+4. sudo apt-get remove
+When it comes to removing the installed program apt-get remove command suits your need. You only have to know the exact package name of the software you want to uninstall.
+
+If you don’t know the package name, use below ubuntu basic command to list all the packages installed on your system and then copy the package name from the list:
+
+	dpkg --list
+
+sudo apt-get autoremove
+apt-get autoremove command is used to remove any unnecessary packages. Unnecessary means, whenever you install an application, the system will also install the software that this application depends on. It is common in Ubuntu that applications share the same libraries. When you remove the application the dependency will stay on your system.
+
+So run apt-get autoremove as sudo after uninstalling a package to remove unwanted software dependencies.
+
+5. sudo apt-get purge
+apt-get purge command is used when you want to remove a software completely from your system with its configuration or data files so that no longer personalized settings will be available during reinstallation.
+
+Run the apt-get purge command as sudo in order to remove the software completely:
+	
+	sudo apt-get purge <package-name>
+
+6. sudo apt-get autoremove
+apt-get autoremove command is used to remove any unnecessary packages. Unnecessary means, whenever you install an application, the system will also install the software that this application depends on. It is common in Ubuntu that applications share the same libraries. When you remove the application the dependency will stay on your system.
+
+
+
+
+now for file 
+
+ls
+ls (list) command lists all files and folders in your current working directory. You can also specify paths to other directories if you want to view their contents.
+
+
+
+Ubuntu Terminal Shortcuts:
+To further ease up your skill, these Ubuntu Terminal keyboard shortcuts would help.
+
+Ubuntu Terminal Shortcuts			Function
+
+Ctrl + Shift + T					Open new tab on current terminal
+Ctrl + Shift + W					Close the current tab
+Ctrl + A							Move cursor to beginning of line
+Ctrl + E							Move cursor to end of line
+Ctrl + U							Clears the entire current line
+Ctrl + K							Clears the command from the cursor right
+Ctrl + W							Delete the word before the cursor
+Ctrl + R							Allows you to search your history for commands matching what you have typed
+Ctrl + C							Kill the current process
+Ctrl + Z							Suspend the current process by sending the signal SIGSTOP
+Ctrl + L							Clears the terminal output
+Alt + F								Move forward one word
+Alt + B								Move backward one word
+Ctrl + Shift + C					Copy the highlighted command to the clipboard
+Ctrl + Shift + V or Shift + Insert	Paste the contents of the clipboard
+Up/Down Arrow keys					To scroll through your command history, allowing you to quickly execute the same command multiple times
+TAB									Used to complete the command you are typing. If more than one command is possible, you can press it multiple times to scroll through the possible 					   						  	If a very wide number of commands are possible, it can output a list of all possible completions.
+
+
+-f or – -force
+causes cp to attempt to remove an existing target file even if it is not writable.
+-i or – -interactive
+asks for confirmation before attempting to replace an existing file.
+-b or – -backup
+makes a backup of any files that would be replaced.
+As usual, consult the man pages for full details on these and other options for copying and mov

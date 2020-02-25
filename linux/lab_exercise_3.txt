@@ -1,0 +1,21 @@
+Create a shell script which displays the tree structure of the directories and sub-directories or files in the current directory upon it's execution.
+
+For example,
+
+A directory contains B directory.
+
+B directory contains C directory and f.txt file.
+
+C directory contains d.txt and e.jpg files.
+
+right now you're in A directory and execute the script then output will be like :
+
+ravi.bhut@RSPL-204:~/Desktop/linux/A$ tree A
+A
+└── B
+    ├── C
+    │   ├── d.txt
+    │   └── e.jpg
+    └── f.txt
+
+2 directories, 3 files

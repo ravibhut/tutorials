@@ -1,0 +1,87 @@
+GIT Exercise
+
+1. Create one repository in git, Clone it in your system, push directory and file structure in git.
+Ans.
+    git init
+    git remote add origin "https://github.com/ravibhut/git.git"
+    git pull origin master
+    git status
+    
+2. Create ‘dev’ branch from master and push some contents(directory with two files) inside this
+
+‘dev’ branch.
+Ans.
+    mkdir dir
+    touch file1.txt file2.txt
+    git add dir
+    git status
+    git commit -m "question2"
+    git branch
+    git push origin dev
+    
+
+3. Create ‘branch1' branch from ‘dev’ branch, create one file in ‘branch1’, as well create ‘branch2’ branch and add one file for this branch too.
+Ans.
+    git checkout -b branch1
+    touch file-branch1.txt
+    git add file-branch1.txt
+    git commit -m "q3"
+
+    git checkout -b branch2
+    touch file-branch2.txt
+    git add file-branch2.txt
+    git commit -m "q32"
+
+
+    
+
+4. Change some contents in existing file inside ‘branch1’ branch, and do same thing for ‘branch2’
+Ans.
+    git add file-branch1.txt 
+    git commit -m "q31"
+
+    git add file-branch2.txt
+    git commit -m "q33"
+
+5. Commit those changes and after committing change the commit message.
+6. After changing commit message you have to push your new changes on git. (NOTE: if you get any conflicts then resolve it and then push that in git.)
+
+Ans.
+    git commit --amend
+    git push origin branch1
+    git push origin branch2
+
+
+7. Merge ‘branch1’ and ‘branch2’ in dev branch.
+Ans.
+    git merge branch1
+    git merge branch2
+
+8. Follow the steps:
+
+    (a). Make a few changes in ‘branch1’ contents
+
+   (b). Without ‘adding and committing those changes’ (branch1), make some changes in branch2 contents (stash your branch1 changes and then apply some changes in branch2)
+
+    (c). Add and commit your branch2 changes and then come back to branch1 and get back your stash changes.
+
+9. Follow the steps:
+
+    (a). Create two branches from dev, i.e ‘feature1’ & ‘feature2’.
+    Ans.
+        git checkout -b feature1
+        git checkout -b feature2
+
+    (b). Add some content in ‘feature1’ as well as add some content in ‘feature2’
+
+    (c). Push ‘feature1’ on git
+
+    (d). Take pull of ‘feature1’ in ‘feature2’
+
+    (e). Merge ‘feature1’ into ‘dev’ branch
+
+    (f). Take pull of ‘dev’ branch
+
+    (g). Push your ‘feature2’ on git
+
+    (h). Rebase ‘feature2’ with ‘dev’ branch and then merge ‘feature2’ in ‘dev’.

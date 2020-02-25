@@ -1,0 +1,39 @@
+$myFont: Helvetica, sans-serif;
+$myColor: rgb(49, 39, 39);
+$myFontSize: 18px;
+$myWidth: 680px;
+
+body {
+  font-family: $myFont;
+  font-size: $myFontSize;
+  $myColor:rgb(86, 91, 150);
+  color: $myColor;
+}
+
+#container {
+  color: $myColor;  
+  width: $myWidth;
+}
+
+nav{
+    ul{
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+    li{
+        display: inline-block;
+    }
+    a{
+        display: block;
+        padding: 10px 20px;
+        text-decoration: none;
+        color: $myColor;
+    }
+    a:hover{
+        color: red;
+    }
+}
+
+@import "import";
+

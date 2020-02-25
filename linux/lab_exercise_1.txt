@@ -1,0 +1,176 @@
+1. check the current working directory command , and get list with including hidden file
+as well filesize of each of file and folder.
+
+Ans.
+	1) for current working directory,
+
+		ravi.bhut@RSPL-204:~$ pwd
+		/home/ad.rapidops.com/ravi.bhut
+
+	2) list with including hidden file,
+
+		ravi.bhut@RSPL-204:~$ ls -a
+		.              examples.desktop                          Pictures
+		..             .gnupg                                    .pki
+		.bash_history  .ICEauthority                             .profile
+		.bash_logout   list1.txt                                 Public
+		.bashrc        list2.txt                                 Templates
+		.cache         .local                                    test.txt
+		.config        mattermost-desktop-4.3.2-linux-amd64.deb  Videos
+		Desktop        .mozilla                                  .vscode
+		Documents      Music
+		Downloads      out.txt
+
+		also used -> ls -al
+
+		ravi.bhut@RSPL-204:~/Documents$ ls -al
+		total 12
+		drwxr-xr-x  2 ravi.bhut domain users 4096 Feb  5 14:46 .
+		drwx------ 17 ravi.bhut domain users 4096 Feb  5 10:25 ..
+		-rw-r--r--  1 ravi.bhut domain users  783 Feb  3 20:01 out.txt
+		-rw-r--r--  1 ravi.bhut domain users    0 Feb  3 19:58 untitled.css
+		-rw-r--r--  1 ravi.bhut domain users    0 Feb  3 19:58 untitled.html
+
+	3) filesize of each of file and folder,
+
+		ravi.bhut@RSPL-204:~/Documents$ du -a
+		0	./untitled.html
+		0	./untitled.css
+		4	./out.txt
+		8	.
+
+2. then create the 2 folder name with intern-2020 & rapidops-2020,
+
+Ans.
+	ravi.bhut@RSPL-204:~/Documents$ mkdir rb rv
+	ravi.bhut@RSPL-204:~/Documents$ ls
+	out.txt  rb  rv  untitled.css  untitled.html
+
+3. then create 2 file within intern-2020 folder, filename is dev.txt helloworld.txt,
+
+Ans.
+	ravi.bhut@RSPL-204:~/Documents$ touch rb.txt rv.txt
+	ravi.bhut@RSPL-204:~/Documents$ ls
+	out.txt  rb  rb.txt  rv  rv.txt  untitled.css  untitled.html
+
+4. open the dev.txt file and write down here about any content, and in helloworld.txt file
+write the “helloworld” with using echo command,
+
+Ans.
+	touch dev.txt helloworld.txt
+		ravi.bhut@RSPL-204:~/Desktop$ echo "helloworld" > helloworld.txt
+		ravi.bhut@RSPL-204:~/Desktop$ cat helloworld.txt
+		helloworld
+
+5. Now copy dev.txt and helloworld.txt into rapidops-2020 folder,
+
+Ans.
+	ravi.bhut@RSPL-204:~/Desktop$ ls
+	dev.txt  helloworld.txt  lab_exercise.txt  rapidops-2020	
+	ravi.bhut@RSPL-204:~/Desktop$ cp {dev.txt,helloworld.txt} rapidops-2020
+	ravi.bhut@RSPL-204:~/Desktop$ ls
+	dev.txt  helloworld.txt  lab_exercise.txt  rapidops-2020
+	ravi.bhut@RSPL-204:~/Desktop$ cd rapidops-2020
+	ravi.bhut@RSPL-204:~/Desktop/rapidops-2020$ ls
+	dev.txt  helloworld.txt
+
+6. Now go to the rapidops-2020 folder and rename that 2(dev.txt, helloworld.txt) files.
+
+Ans.
+	ravi.bhut@RSPL-204:~/Desktop/rapidops-2020$ ls
+	dev.txt  helloworld.txt
+	ravi.bhut@RSPL-204:~/Desktop/rapidops-2020$ mv dev.txt ravi.txt
+	ravi.bhut@RSPL-204:~/Desktop/rapidops-2020$ mv helloworld.txt h.txt
+	ravi.bhut@RSPL-204:~/Desktop/rapidops-2020$ ls
+	h.txt  ravi.txt
+
+7. In the same directory path give the read only permission to dev.txt for file’s owner and
+give read-write-execute for owner & read-write permission for group to helloworld.txt.
+
+Ans.
+	1)read only permission to dev.txt for file’s owner
+		ravi.bhut@RSPL-204:~/Desktop/rapidops-2020$ chmod u+rw dev.txt
+		ravi.bhut@RSPL-204:~/Desktop/rapidops-2020$ ls -l dev.txt
+		-rw-r----- 1 ravi.bhut domain users 15 Feb  6 11:47 dev.txt
+	2)read-write-execute for owner & read-write permission for group to helloworld.txt
+		ravi.bhut@RSPL-204:~/Desktop/rapidops-2020$ chmod u+rwx helloworld.txt
+		ravi.bhut@RSPL-204:~/Desktop/rapidops-2020$ chmod g+rw helloworld.txt
+		ravi.bhut@RSPL-204:~/Desktop/rapidops-2020$ ls -l helloworld.txt
+		-rwxrw-rwx 1 ravi.bhut domain users 11 Feb  6 11:47 helloworld.txt
+
+8. Now create archive file within same directory and shift into intern-2020 directory.
+
+Ans.
+	ravi.bhut@RSPL-204:~/Desktop$ touch archive
+	ravi.bhut@RSPL-204:~/Desktop$ ls
+	archive  dev.txt  helloworld.txt  lab_exercise.txt  rapidops-2020
+	ravi.bhut@RSPL-204:~/Desktop$ mv archive rapidops-2020
+
+9. Now copy that archive file within same directory location and remove the older archive
+file.
+
+Ans.
+	ravi.bhut@RSPL-204:~/Desktop/rapidops-2020$ ls
+	archive  dev.txt  helloworld.txt
+	ravi.bhut@RSPL-204:~/Desktop/rapidops-2020$ cp archive arc
+	ravi.bhut@RSPL-204:~/Desktop/rapidops-2020$ ls
+	arc  archive  dev.txt  helloworld.txt
+	ravi.bhut@RSPL-204:~/Desktop/rapidops-2020$ rm -r archive
+	ravi.bhut@RSPL-204:~/Desktop/rapidops-2020$ ls
+	arc  dev.txt  helloworld.txt
+
+10. Using the command find out the dev.txt file.
+
+Ans.
+	ravi.bhut@RSPL-204:~$ find -name dev.txt
+	./Desktop/rapidops-2020/dev.txt
+	./Desktop/dev.txt
+
+
+
+11. Check the cpu, memory usage with using CLI.
+
+Ans.
+	top
+
+12. Check the disk usage and free disk space with using CLI.
+
+Ans.
+	df
+
+13. Check the all system process and filter out any of one process service.
+
+Ans.
+	1)check the all system process
+		service --status-all
+	2)one process services
+		service cron status
+
+14. Retrieve the content from web server with using CLI. Here Link
+
+Ans.
+	wget https://releases.mattermost.com/desktop/4.3.2/mattermost-desktop-4.3.2-linux-i386.deb
+
+15. Check your network interface information with using CLI.
+
+Ans.
+	ravi.bhut@RSPL-204:~$ ifconfig
+	enp1s0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+	        inet 192.168.2.170  netmask 255.255.252.0  broadcast 192.168.3.255
+	        inet6 fe80::704f:8ea7:9485:e4b6  prefixlen 64  scopeid 0x20<link>
+	        ether 1c:1b:0d:dd:64:a0  txqueuelen 1000  (Ethernet)
+	        RX packets 578347  bytes 632619102 (632.6 MB)
+	        RX errors 0  dropped 0  overruns 0  frame 0
+	        TX packets 156634  bytes 13404370 (13.4 MB)
+	        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+	lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
+	        inet 127.0.0.1  netmask 255.0.0.0
+	        inet6 ::1  prefixlen 128  scopeid 0x10<host>
+	        loop  txqueuelen 1000  (Local Loopback)
+	        RX packets 2425  bytes 253059 (253.0 KB)
+	        RX errors 0  dropped 0  overruns 0  frame 0
+	        TX packets 2425  bytes 253059 (253.0 KB)
+	        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+	
